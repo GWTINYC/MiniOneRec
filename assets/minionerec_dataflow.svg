@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1180" viewBox="0 0 1680 1180" role="img" aria-labelledby="title desc">
+  <title id="title">MiniOneRec End-to-End Data Flow</title>
+  <desc id="desc">Data flow diagram for MiniOneRec covering preprocessing, SID construction, SFT, RL, constrained decoding, and evaluation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7f4ea"/>
+      <stop offset="100%" stop-color="#eef5f2"/>
+    </linearGradient>
+    <linearGradient id="stageA" x1="0" x2="1">
+      <stop offset="0%" stop-color="#fde6b8"/>
+      <stop offset="100%" stop-color="#f7d27c"/>
+    </linearGradient>
+    <linearGradient id="stageB" x1="0" x2="1">
+      <stop offset="0%" stop-color="#d9efe2"/>
+      <stop offset="100%" stop-color="#a9d7be"/>
+    </linearGradient>
+    <linearGradient id="stageC" x1="0" x2="1">
+      <stop offset="0%" stop-color="#d8e8f8"/>
+      <stop offset="100%" stop-color="#a8c8ee"/>
+    </linearGradient>
+    <linearGradient id="stageD" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f2dff4"/>
+      <stop offset="100%" stop-color="#d4b0dd"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M0,0 L14,7 L0,14 z" fill="#4b5563"/>
+    </marker>
+    <style>
+      .bg { fill: url(#bg); }
+      .title { font: 700 34px 'Helvetica Neue', Arial, sans-serif; fill: #1f2937; }
+      .subtitle { font: 400 16px 'Helvetica Neue', Arial, sans-serif; fill: #4b5563; }
+      .section { font: 700 20px 'Helvetica Neue', Arial, sans-serif; fill: #111827; }
+      .cardTitle { font: 700 17px 'Helvetica Neue', Arial, sans-serif; fill: #111827; }
+      .cardText { font: 400 13px 'Helvetica Neue', Arial, sans-serif; fill: #374151; }
+      .tiny { font: 400 12px 'Helvetica Neue', Arial, sans-serif; fill: #4b5563; }
+      .label { font: 700 12px 'Helvetica Neue', Arial, sans-serif; fill: #374151; }
+      .stageA { fill: url(#stageA); stroke: #b8891a; stroke-width: 1.5; }
+      .stageB { fill: url(#stageB); stroke: #3f7f60; stroke-width: 1.5; }
+      .stageC { fill: url(#stageC); stroke: #3972b8; stroke-width: 1.5; }
+      .stageD { fill: url(#stageD); stroke: #8b4c97; stroke-width: 1.5; }
+      .artifact { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.3; }
+      .note { fill: #fffdf5; stroke: #d6c79b; stroke-width: 1.2; }
+      .frame { fill: none; stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 8 7; }
+      .arrow { stroke: #4b5563; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .arrowSoft { stroke: #6b7280; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 7 7; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1680" height="1180"/>
+
+  <text class="title" x="64" y="62">MiniOneRec: End-to-End Data Flow</text>
+  <text class="subtitle" x="64" y="92">From raw Amazon interactions and item text to SID construction, multi-task SFT, GRPO-style RL, constrained decoding, and offline Top-K evaluation.</text>
+
+  <rect class="frame" x="44" y="122" width="1592" height="1012" rx="24"/>
+
+  <text class="section" x="80" y="162">1. Input Data And Semantic ID Construction</text>
+
+  <rect class="artifact" x="80" y="190" width="270" height="110" rx="18" filter="url(#shadow)"/>
+  <text class="cardTitle" x="100" y="220">Raw Amazon Data</text>
+  <text class="cardText" x="100" y="246">`data/amazon18_data_process.py`</text>
+  <text class="cardText" x="100" y="266">or `amazon23_data_process.py`</text>
+  <text class="cardText" x="100" y="286">Outputs filtered user-item interactions</text>
+
+  <rect class="artifact" x="390" y="190" width="270" height="110" rx="18" filter="url(#shadow)"/>
+  <text class="cardTitle" x="410" y="220">Item Metadata</text>
+  <text class="cardText" x="410" y="246">Title + description per item</text>
+  <text class="cardText" x="410" y="266">Saved as `*.item.json`</text>
+  <text class="cardText" x="410" y="286">Used by SFT, RL, evaluation</text>
+
+  <rect class="stageA" x="700" y="180" width="320" height="130" rx="22" filter="url(#shadow)"/>
+  <text class="cardTitle" x="724" y="214">Text To Embedding</text>
+  <text class="cardText" x="724" y="240">`rq/text2emb/amazon_text2emb.py`</text>
+  <text class="cardText" x="724" y="260">Frozen text encoder on title + description</text>
+  <text class="cardText" x="724" y="280">Output: item embedding matrix `.npy`</text>
+
+  <rect class="stageA" x="1070" y="170" width="500" height="150" rx="22" filter="url(#shadow)"/>
+  <text class="cardTitle" x="1094" y="204">SID Construction</text>
+  <text class="cardText" x="1094" y="230">RQ-VAE / RQ-Kmeans / constrained-RQ-Kmeans / RQ-Kmeans+</text>
+  <text class="cardText" x="1094" y="250">Main scripts: `rq/rqvae.py`, `rq/rqkmeans_plus.py`,</text>
+  <text class="cardText" x="1094" y="270">`rq/rqkmeans_constrained.py`, `rq/generate_indices_plus.py`</text>
+  <text class="cardText" x="1094" y="290">Output: semantic path tokens like &lt;a_12&gt;&lt;b_44&gt;&lt;c_9&gt;</text>
+
+  <rect class="artifact" x="1120" y="350" width="220" height="90" rx="16" filter="url(#shadow)"/>
+  <text class="cardTitle" x="1140" y="382">`*.index.json`</text>
+  <text class="cardText" x="1140" y="406">item_id -&gt; [SID tokens]</text>
+  <text class="cardText" x="1140" y="426">Core bridge into LLM space</text>
+
+  <rect class="artifact" x="1370" y="350" width="200" height="90" rx="16" filter="url(#shadow)"/>
+  <text class="cardTitle" x="1390" y="382">`*.txt info file`</text>
+  <text class="cardText" x="1390" y="406">SID, title, item_id</text>
+  <text class="cardText" x="1390" y="426">Builds decoding trie</text>
+
+  <path class="arrow" d="M350 245 L390 245"/>
+  <path class="arrow" d="M660 245 L700 245"/>
+  <path class="arrow" d="M1020 245 L1070 245"/>
+  <path class="arrowSoft" d="M1270 320 L1238 350"/>
+  <path class="arrowSoft" d="M1420 320 L1460 350"/>
+
+  <text class="section" x="80" y="500">2. Dataset Conversion Into MiniOneRec Training Format</text>
+
+  <rect class="stageB" x="80" y="530" width="470" height="150" rx="22" filter="url(#shadow)"/>
+  <text class="cardTitle" x="104" y="564">Convert Interaction Sequences To SID-Based Samples</text>
+  <text class="cardText" x="104" y="590">`convert_dataset.py` reads:</text>
+  <text class="cardText" x="104" y="610">interaction splits + `*.item.json` + `*.index.json`</text>
+  <text class="cardText" x="104" y="630">and writes CSV rows with `history_item_sid`, `item_sid`,</text>
+  <text class="cardText" x="104" y="650">`history_item_title`, `item_title`, `history_item_id`, `item_id`</text>
+
+  <rect class="artifact" x="600" y="530" width="260" height="150" rx="18" filter="url(#shadow)"/>
+  <text class="cardTitle" x="620" y="564">Train / Valid / Test CSV</text>
+  <text class="cardText" x="620" y="590">`data/Amazon/{train,valid,test}/*.csv`</text>
+  <text class="cardText" x="620" y="610">Main supervised source for sequence tasks</text>
+  <text class="cardText" x="620" y="630">History now lives in SID space</text>
+  <text class="cardText" x="620" y="650">Titles are kept for auxiliary alignment tasks</text>
+
+  <rect class="note" x="910" y="540" width="660" height="130" rx="18" filter="url(#shadow)"/>
+  <text class="cardTitle" x="934" y="574">Why This Conversion Matters</text>
+  <text class="cardText" x="934" y="600">MiniOneRec does not ask the LLM to generate open-ended titles directly.</text>
+  <text class="cardText" x="934" y="620">It converts recommendation into generation over a closed, structured SID vocabulary.</text>
+  <text class="cardText" x="934" y="640">That is what later enables constrained decoding and stable Top-K recommendation.</text>
+
+  <path class="arrow" d="M1340 440 L1340 505 L550 505 L550 605 L600 605"/>
+  <path class="arrow" d="M1230 440 L1230 505 L550 505 L550 605"/>
+  <path class="arrowSoft" d="M350 300 L350 530"/>
+
+  <text class="section" x="80" y="750">3. Training, Decoding, And Evaluation Loop</text>
+
+  <rect class="stageC" x="80" y="790" width="460" height="210" rx="24" filter="url(#shadow)"/>
+  <text class="cardTitle" x="104" y="824">SFT Stage: Learn To Generate Next SID</text>
+  <text class="cardText" x="104" y="850">Entry: `sft.py`, launcher: `sft.sh`</text>
+  <text class="cardText" x="104" y="870">Tokenizer is extended with SID tokens from `*.index.json`</text>
+  <text class="cardText" x="104" y="890">Main datasets:</text>
+  <text class="cardText" x="124" y="912">`SidSFTDataset`: history SID -&gt; next SID</text>
+  <text class="cardText" x="124" y="932">`SidItemFeatDataset`: title &lt;-&gt; SID alignment</text>
+  <text class="cardText" x="124" y="952">`FusionSeqRecDataset`: sequence + title/description tasks</text>
+  <text class="cardText" x="104" y="974">Optional mode: freeze original LLM, train only new SID embeddings</text>
+
+  <rect class="artifact" x="590" y="820" width="240" height="150" rx="18" filter="url(#shadow)"/>
+  <text class="cardTitle" x="610" y="854">SFT Checkpoint</text>
+  <text class="cardText" x="610" y="880">LLM now understands:</text>
+  <text class="cardText" x="610" y="900">user history SID sequence</text>
+  <text class="cardText" x="610" y="920">title/description to SID mapping</text>
+  <text class="cardText" x="610" y="940">and SID token semantics</text>
+
+  <rect class="stageD" x="880" y="790" width="500" height="210" rx="24" filter="url(#shadow)"/>
+  <text class="cardTitle" x="904" y="824">RL Stage: GRPO-Style Recommendation Optimization</text>
+  <text class="cardText" x="904" y="850">Entry: `rl.py`, trainer: `minionerec_trainer.py`, launcher: `rl.sh`</text>
+  <text class="cardText" x="904" y="870">Datasets:</text>
+  <text class="cardText" x="924" y="892">`SidDataset`: history SID -&gt; target SID</text>
+  <text class="cardText" x="924" y="912">`RLTitle2SidDataset`: title/description -&gt; SID</text>
+  <text class="cardText" x="924" y="932">`RLSeqTitle2SidDataset`: title sequence -&gt; SID</text>
+  <text class="cardText" x="904" y="954">Reward options: exact hit, rank-aware reward, semantic reward, CF reward</text>
+  <text class="cardText" x="904" y="974">Group-wise normalization over multiple generations per prompt</text>
+
+  <rect class="artifact" x="1430" y="800" width="150" height="90" rx="16" filter="url(#shadow)"/>
+  <text class="cardTitle" x="1450" y="832">Final Model</text>
+  <text class="cardText" x="1450" y="856">policy checkpoint</text>
+  <text class="cardText" x="1450" y="876">for offline eval</text>
+
+  <rect class="note" x="1420" y="920" width="170" height="140" rx="18" filter="url(#shadow)"/>
+  <text class="cardTitle" x="1440" y="954">Key RL Trick</text>
+  <text class="cardText" x="1440" y="978">Same prompt is repeated</text>
+  <text class="cardText" x="1440" y="998">`num_generations` times</text>
+  <text class="cardText" x="1440" y="1018">so rewards can be</text>
+  <text class="cardText" x="1440" y="1038">normalized within group</text>
+
+  <rect class="stageB" x="320" y="1030" width="470" height="80" rx="20" filter="url(#shadow)"/>
+  <text class="cardTitle" x="344" y="1062">Constrained Decoding</text>
+  <text class="cardText" x="344" y="1086">`LogitProcessor.py` + trie-like prefix table from info file restrict every decoding step to valid SID continuations</text>
+
+  <rect class="stageA" x="880" y="1030" width="500" height="80" rx="20" filter="url(#shadow)"/>
+  <text class="cardTitle" x="904" y="1062">Offline Top-K Evaluation</text>
+  <text class="cardText" x="904" y="1086">`evaluate.py` generates constrained beams, `merge.py` merges shards, `calc.py` computes HR@K / NDCG@K and invalid-item stats</text>
+
+  <path class="arrow" d="M540 895 L590 895"/>
+  <path class="arrow" d="M830 895 L880 895"/>
+  <path class="arrow" d="M1380 895 L1430 845"/>
+  <path class="arrow" d="M1510 890 L1510 1010 L1380 1010 L1380 1070"/>
+  <path class="arrow" d="M1230 440 L1230 760 L555 760 L555 1030"/>
+  <path class="arrow" d="M1470 440 L1470 760 L555 760"/>
+  <path class="arrowSoft dash" d="M710 970 L710 1030"/>
+  <path class="arrowSoft dash" d="M1130 1000 L1130 1030"/>
+
+  <rect class="note" x="72" y="1040" width="210" height="70" rx="16" filter="url(#shadow)"/>
+  <text class="cardTitle" x="92" y="1070">Mental Model</text>
+  <text class="cardText" x="92" y="1092">Recommendation = constrained generation over SID space</text>
+
+  <text class="tiny" x="64" y="1150">Suggested reading order: `convert_dataset.py` -&gt; `rq/generate_indices_plus.py` -&gt; `data.py` -&gt; `sft.py` -&gt; `LogitProcessor.py` -&gt; `rl.py` -&gt; `minionerec_trainer.py` -&gt; `evaluate.py`</text>
+</svg>

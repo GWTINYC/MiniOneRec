@@ -1,0 +1,81 @@
+{
+  "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.20",
+  "startedAt": "2026-03-23T12:38:22.416959Z",
+  "args": [
+    "--base_model",
+    "./models/qwen3-1.7b",
+    "--batch_size",
+    "8",
+    "--micro_batch_size",
+    "2",
+    "--train_file",
+    "/tmp/tiny_train.csv",
+    "--eval_file",
+    "/tmp/tiny_valid.csv",
+    "--output_dir",
+    "output_dir/sft_quick_test",
+    "--wandb_project",
+    "wandb_proj",
+    "--wandb_run_name",
+    "sft_quick_test",
+    "--category",
+    "Industrial_and_Scientific",
+    "--train_from_scratch",
+    "False",
+    "--seed",
+    "42",
+    "--sid_index_path",
+    "./data/Amazon/index/Industrial_and_Scientific.index.json",
+    "--item_meta_path",
+    "./data/Amazon/index/Industrial_and_Scientific.item.json",
+    "--freeze_LLM",
+    "True",
+    "--cutoff_len",
+    "256",
+    "--num_train_epochs",
+    "1",
+    "--eval_steps",
+    "10000",
+    "--logging_steps",
+    "10",
+    "--save_steps",
+    "10000",
+    "--gradient_accumulation_steps",
+    "1"
+  ],
+  "program": "/home/wxh/MiniOneRec/sft.py",
+  "codePath": "sft.py",
+  "codePathLocal": "sft.py",
+  "git": {
+    "remote": "git@github.com:GWTINYC/MiniOneRec.git",
+    "commit": "8e03e354033fc81f830580f01c102bd7fbaa262a"
+  },
+  "email": "gwtinyc@qq.com",
+  "root": "/home/wxh/MiniOneRec",
+  "host": "LENOVO-124q",
+  "executable": "/home/wxh/MiniOneRec/.venv/bin/python",
+  "cpu_count": 8,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1081101176832",
+      "used": "55403610112"
+    }
+  },
+  "memory": {
+    "total": "16626413568"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal": "8585740288",
+      "architecture": "Ada",
+      "uuid": "GPU-7efbff8b-2ceb-3749-917b-5333d001fc1c"
+    }
+  ],
+  "cudaVersion": "13.1",
+  "writerId": "uoq514dadsc7n1gpb6n02rofiya6h1jt"
+}

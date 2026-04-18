@@ -1,0 +1,170 @@
+                                                                                            
+{'loss': 8.4153, 'grad_norm': 28.0, 'learning_rate': 0.0, 'epoch': 0.0}
+{'loss': 7.4847, 'grad_norm': 14.1875, 'learning_rate': 1.4999999999999999e-05, 'epoch': 0.0}
+{'loss': 5.7929, 'grad_norm': 12.6875, 'learning_rate': 2.9999999999999997e-05, 'epoch': 0.0}
+{'loss': 6.1557, 'grad_norm': 13.0625, 'learning_rate': 4.4999999999999996e-05, 'epoch': 0.0}
+{'loss': 10.5774, 'grad_norm': 27.875, 'learning_rate': 5.9999999999999995e-05, 'epoch': 0.0}
+{'loss': 6.2486, 'grad_norm': 7.53125, 'learning_rate': 7.5e-05, 'epoch': 0.01}
+{'loss': 6.6227, 'grad_norm': 15.1875, 'learning_rate': 8.999999999999999e-05, 'epoch': 0.01}
+{'loss': 10.1759, 'grad_norm': 24.75, 'learning_rate': 0.00010499999999999999, 'epoch': 0.01}
+{'loss': 7.267, 'grad_norm': 12.8125, 'learning_rate': 0.00011999999999999999, 'epoch': 0.01}
+{'loss': 6.5709, 'grad_norm': 7.875, 'learning_rate': 0.000135, 'epoch': 0.01}
+{'loss': 7.2392, 'grad_norm': 14.0625, 'learning_rate': 0.00015, 'epoch': 0.01}
+{'loss': 6.2558, 'grad_norm': 9.4375, 'learning_rate': 0.000165, 'epoch': 0.01}
+{'loss': 8.402, 'grad_norm': 22.5, 'learning_rate': 0.00017999999999999998, 'epoch': 0.01}
+{'loss': 7.8288, 'grad_norm': 25.5, 'learning_rate': 0.000195, 'epoch': 0.01}
+{'loss': 6.5003, 'grad_norm': 7.8125, 'learning_rate': 0.00020999999999999998, 'epoch': 0.01}
+{'loss': 5.739, 'grad_norm': 13.375, 'learning_rate': 0.000225, 'epoch': 0.02}
+{'loss': 5.3318, 'grad_norm': 15.125, 'learning_rate': 0.00023999999999999998, 'epoch': 0.02}
+{'loss': 7.1811, 'grad_norm': 17.5, 'learning_rate': 0.00025499999999999996, 'epoch': 0.02}
+{'loss': 6.865, 'grad_norm': 20.25, 'learning_rate': 0.00027, 'epoch': 0.02}
+{'loss': 8.1264, 'grad_norm': 13.0625, 'learning_rate': 0.000285, 'epoch': 0.02}
+{'loss': 5.6931, 'grad_norm': 7.78125, 'learning_rate': 0.0003, 'epoch': 0.02}
+{'loss': 5.9493, 'grad_norm': 9.1875, 'learning_rate': 0.00029997038499506414, 'epoch': 0.02}
+{'loss': 7.4446, 'grad_norm': 19.0, 'learning_rate': 0.0002999407699901283, 'epoch': 0.02}
+{'loss': 6.487, 'grad_norm': 7.59375, 'learning_rate': 0.00029991115498519247, 'epoch': 0.02}
+{'loss': 6.2443, 'grad_norm': 18.5, 'learning_rate': 0.00029988153998025663, 'epoch': 0.02}
+{'loss': 4.6687, 'grad_norm': 8.6875, 'learning_rate': 0.0002998519249753208, 'epoch': 0.03}
+{'loss': 5.2982, 'grad_norm': 4.25, 'learning_rate': 0.00029982230997038496, 'epoch': 0.03}
+{'loss': 12.1995, 'grad_norm': 58.0, 'learning_rate': 0.0002997926949654491, 'epoch': 0.03}
+{'loss': 6.3467, 'grad_norm': 8.9375, 'learning_rate': 0.0002997630799605133, 'epoch': 0.03}
+{'loss': 6.8188, 'grad_norm': 8.6875, 'learning_rate': 0.00029973346495557746, 'epoch': 0.03}
+{'loss': 7.2518, 'grad_norm': 57.75, 'learning_rate': 0.0002997038499506416, 'epoch': 0.03}
+{'loss': 7.3466, 'grad_norm': 11.0, 'learning_rate': 0.0002996742349457058, 'epoch': 0.03}
+{'loss': 5.159, 'grad_norm': 8.125, 'learning_rate': 0.00029964461994076995, 'epoch': 0.03}
+{'loss': 6.1599, 'grad_norm': 7.6875, 'learning_rate': 0.0002996150049358341, 'epoch': 0.03}
+{'loss': 5.546, 'grad_norm': 7.9375, 'learning_rate': 0.0002995853899308983, 'epoch': 0.03}
+{'loss': 5.371, 'grad_norm': 5.96875, 'learning_rate': 0.00029955577492596244, 'epoch': 0.04}
+{'loss': 6.1435, 'grad_norm': 9.8125, 'learning_rate': 0.0002995261599210266, 'epoch': 0.04}
+{'loss': 6.2928, 'grad_norm': 8.6875, 'learning_rate': 0.00029949654491609077, 'epoch': 0.04}
+  File "/home/wxh/MiniOneRec/sft.py", line 275, in <module>
+    fire.Fire(train)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/wxh/MiniOneRec/sft.py", line 265, in train
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 4020, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 4110, in compute_loss
+    outputs = model(**inputs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/accelerate/utils/operations.py", line 818, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/accelerate/utils/operations.py", line 806, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 480, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 1064, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 410, in forward
+    hidden_states = decoder_layer(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/modeling_layers.py", line 94, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 260, in forward
+    hidden_states, _ = self.self_attn(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 201, in forward
+    key_states = self.k_norm(self.k_proj(hidden_states).view(hidden_shape)).transpose(1, 2)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/wxh/MiniOneRec/sft.py", line 275, in <module>
+    fire.Fire(train)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/wxh/MiniOneRec/sft.py", line 265, in train
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 4020, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 4110, in compute_loss
+    outputs = model(**inputs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/accelerate/utils/operations.py", line 818, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/accelerate/utils/operations.py", line 806, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 480, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 1064, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 410, in forward
+    hidden_states = decoder_layer(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/modeling_layers.py", line 94, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 260, in forward
+    hidden_states, _ = self.self_attn(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 201, in forward
+    key_states = self.k_norm(self.k_proj(hidden_states).view(hidden_shape)).transpose(1, 2)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

@@ -1,0 +1,82 @@
+  0%|                                                | 30/24950 [12:30<163:07:13, 23.56s/it]Traceback (most recent call last):
+{'loss': 6.995, 'grad_norm': 6.0625, 'learning_rate': 0.0, 'epoch': 0.0}
+{'loss': 7.6269, 'grad_norm': 6.875, 'learning_rate': 1.4999999999999999e-05, 'epoch': 0.0}
+{'loss': 6.1793, 'grad_norm': 5.3125, 'learning_rate': 2.9999999999999997e-05, 'epoch': 0.0}
+{'loss': 6.4182, 'grad_norm': 5.78125, 'learning_rate': 4.4999999999999996e-05, 'epoch': 0.0}
+{'loss': 6.8656, 'grad_norm': 6.09375, 'learning_rate': 5.9999999999999995e-05, 'epoch': 0.0}
+{'loss': 6.3379, 'grad_norm': 5.9375, 'learning_rate': 7.5e-05, 'epoch': 0.0}
+{'loss': 7.1461, 'grad_norm': 5.09375, 'learning_rate': 8.999999999999999e-05, 'epoch': 0.0}
+{'loss': 6.8344, 'grad_norm': 6.5, 'learning_rate': 0.00010499999999999999, 'epoch': 0.0}
+{'loss': 6.8649, 'grad_norm': 6.375, 'learning_rate': 0.00011999999999999999, 'epoch': 0.0}
+{'loss': 6.3819, 'grad_norm': 5.15625, 'learning_rate': 0.000135, 'epoch': 0.0}
+{'loss': 7.3422, 'grad_norm': 5.59375, 'learning_rate': 0.00015, 'epoch': 0.0}
+{'loss': 6.0547, 'grad_norm': 4.6875, 'learning_rate': 0.000165, 'epoch': 0.0}
+{'loss': 6.3528, 'grad_norm': 4.5625, 'learning_rate': 0.00017999999999999998, 'epoch': 0.01}
+{'loss': 7.542, 'grad_norm': 6.46875, 'learning_rate': 0.000195, 'epoch': 0.01}
+{'loss': 6.4479, 'grad_norm': 5.40625, 'learning_rate': 0.00020999999999999998, 'epoch': 0.01}
+{'loss': 7.4785, 'grad_norm': 8.1875, 'learning_rate': 0.000225, 'epoch': 0.01}
+{'loss': 6.1555, 'grad_norm': 4.0625, 'learning_rate': 0.00023999999999999998, 'epoch': 0.01}
+{'loss': 7.2002, 'grad_norm': 6.71875, 'learning_rate': 0.00025499999999999996, 'epoch': 0.01}
+{'loss': 6.5249, 'grad_norm': 5.3125, 'learning_rate': 0.00027, 'epoch': 0.01}
+{'loss': 6.3915, 'grad_norm': 5.875, 'learning_rate': 0.000285, 'epoch': 0.01}
+{'loss': 6.2946, 'grad_norm': 7.90625, 'learning_rate': 0.0003, 'epoch': 0.01}
+{'loss': 6.1301, 'grad_norm': 5.6875, 'learning_rate': 0.0002999879663056558, 'epoch': 0.01}
+{'loss': 6.0668, 'grad_norm': 3.90625, 'learning_rate': 0.00029997593261131165, 'epoch': 0.01}
+{'loss': 6.309, 'grad_norm': 5.96875, 'learning_rate': 0.0002999638989169675, 'epoch': 0.01}
+{'loss': 5.945, 'grad_norm': 4.6875, 'learning_rate': 0.0002999518652226233, 'epoch': 0.01}
+{'loss': 6.4567, 'grad_norm': 6.46875, 'learning_rate': 0.00029993983152827916, 'epoch': 0.01}
+{'loss': 5.3952, 'grad_norm': 4.21875, 'learning_rate': 0.000299927797833935, 'epoch': 0.01}
+{'loss': 5.9137, 'grad_norm': 4.125, 'learning_rate': 0.00029991576413959084, 'epoch': 0.01}
+{'loss': 6.3765, 'grad_norm': 9.0625, 'learning_rate': 0.0002999037304452467, 'epoch': 0.01}
+{'loss': 5.3225, 'grad_norm': 5.9375, 'learning_rate': 0.0002998916967509025, 'epoch': 0.01}
+  File "/home/wxh/MiniOneRec/sft.py", line 275, in <module>
+    fire.Fire(train)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/wxh/MiniOneRec/sft.py", line 265, in train
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 4071, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/accelerate/accelerator.py", line 2734, in backward
+    loss.backward(**kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/wxh/MiniOneRec/sft.py", line 275, in <module>
+    fire.Fire(train)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/wxh/MiniOneRec/sft.py", line 265, in train
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 4071, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/accelerate/accelerator.py", line 2734, in backward
+    loss.backward(**kwargs)
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/wxh/MiniOneRec/.venv/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

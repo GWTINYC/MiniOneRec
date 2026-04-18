@@ -146,6 +146,9 @@ def train(
     tokenizer.pad_token_id = tokenizer.eos_token_id
     tokenizer.padding_side = "left"
     
+    # 保存原始词汇表大小（用于冻结 LLM 参数时）
+    original_vocab_size = len(tokenizer)
+    
     if sid_index_path and os.path.exists(sid_index_path):
         print(f"Loading index from {sid_index_path}")
         token_extender = TokenExtender(
